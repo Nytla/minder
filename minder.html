@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Угадыватель Выших мыслей</title>
+		<style type="text/css">
+			.steps {
+				font-size: 10px; color: #cccccc; font-family: verdana; background-color: #ffffff
+			}
+			.letters {
+				font-size: 17px; color: #000000; font-family: wingdings; background-color: #FAF3D2
+			}
+			.numbers {
+				font-size: 17px; font-family: verdana; background-color: #F9E497
+			}
+			.block {
+				font-size: 35px; color: #000000; font-family: wingdings; background-color: #FAF3D2;
+				cursor: pointer;
+				align: center
+			}
+		</style>
+		<script type="text/javascript">
+			function tableCreate() {
+				
+				alphaArray = new Array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+
+				ax = Math.round(Math.random()*25);
+				
+				var table = '<table border="0" cellspacing="1" cellpadding="1" width="100%"><tr>';
+				
+				var j = 1;
+				
+				for (i = 1; i < 101 ; i++) {
+					
+					var a = Math.round(Math.random()*25);
+					
+					if (i%9 == 0 &&  i < 100) { 
+						
+						a = ax;
+						
+						table += '<td class="numbers">'+i+'</td><td class="letters">'+alphaArray[a]+'</td>';
+					} else {
+						table += '<td class="numbers">'+i+'</td><td class="letters">'+alphaArray[a]+'</td>';
+					}
+					
+					if (j%10 == 0) {
+						table += '</tr><tr>';
+					}
+					
+					j++;
+				}
+				
+				table += '</table>';
+				
+				sym.innerHTML = table;
+				
+				sh.innerHTML = '';
+			}
+			
+			function letterShow() {
+				
+				sh.innerHTML = alphaArray[ax];
+				
+				sym.innerHTML = '<h1><a href="javascript:tableCreate()">Попробовать Ещё!</a></h1>';
+			}
+		</script>
+	</head>
+	<body onload="tableCreate();">  
+		<center>
+			<div>
+				<p>
+					<span><b><font size="5" color="#000080">Угадыватель Ваших мыслей</font></b></span>
+				</p>
+			</div>
+			<table cellspacing="1" cellpadding="1" width="770" border="0">
+				<tbody>
+					<tr>
+						<td class="steps" valign="top" width="100%">
+							<font color="#000000" size="3">
+								<b>1-й шаг.</b> Задумайте любое двузначное число (например, 71)<br>
+								<b>2-й шаг.</b> Вычтите из него составляющие его цифры (Например 71 - 7 - 1 = 63)<br>
+								<b>3-й шаг.</b> Найдите это число в таблице и <span>запомните </span>символ, которому оно соответствует.<br>
+								<b>4-й шаг.</b> Вообразите мысленно</b> себе этот значок и щелкните по квадрату. В нем появится Ваш значок!
+							</font>
+							<br><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="sym" vAlign=center align=middle width="100%" bgcolor="#CCCCCC"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<table class="show" onclick="letterShow();" height="80" width="80" cellspacing="1" cellpadding="1"  align="center" bgcolor="" border="3">
+				<tbody>
+					<tr>
+						<td class="block" id="sh" align="middle"></td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
+	</body>
+</html>
