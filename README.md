@@ -1,8 +1,3 @@
-minder
-======
-
-This script guesses your thoughts
-
 #Minder
 This script guesses your thoughts.
 
