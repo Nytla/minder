@@ -7,4 +7,4 @@ This script guesses your thoughts.
 * JavaScript
 
 ##Have comments or suggestions?
-Create [Issue](https://github.com/Nytla/Universal-PHP-Classes/issues).
+Create [Issue](https://github.com/Nytla/minder/issues).
